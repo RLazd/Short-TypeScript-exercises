@@ -34,3 +34,4 @@ describe("Pyramin function", () => {
     expect(spy.mock.calls.length).toEqual(4);
   });
 });
+

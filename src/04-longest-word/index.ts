@@ -10,8 +10,21 @@
  * longestWord("Hello there") === "Hello"
  * longestWord("My name is Adam") === "name"
  * longestWord("fun&!! time") === "time"
+ * 
  */
 
-function longestWord(sen: string) {}
+function longestWord(sen: string) {
+    let cleanSen: string = sen.replace(/([^A-Z ])/gi, '');
+    let cleanArr: string[] = cleanSen.split(' ');
+    let longestChr = 0
+    let word = null
+    cleanArr.forEach(w => {
+        if (longestChr < w.length) {
+            longestChr = w.length;
+            word = w
+        }
+    });
+    return word
+}
 
 export { longestWord };

@@ -15,11 +15,19 @@
  */
 
 class Stack {
-  push(n: number) {}
+  stack: number[] = []
+  push(n: number) {
+    this.stack.push(n)    //kpc ja šeit pieliek ';' beigās testi neizpildās? 
+  }
 
-  pop() {}
+  pop() {
+    return this.stack.pop();
+  }
 
-  peek() {}
+  peek() {
+    return this.stack[this.stack.length - 1];
+  }
 }
 
 export { Stack };
+

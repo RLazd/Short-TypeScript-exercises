@@ -1,3 +1,4 @@
+
 /**
  * Vowels
  *
@@ -9,6 +10,9 @@
  * vowels('Hello there!') === 4
  */
 
-function vowels(s: string) {}
+function vowels(s: string) {
+    const vowelsArr = s.match(/[aeiou]/gi);
+    return vowelsArr === null ? 0 : vowelsArr.length;       
+}
 
 export { vowels };

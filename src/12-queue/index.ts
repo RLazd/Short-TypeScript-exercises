@@ -13,9 +13,13 @@
  */
 
 class Queue {
-  add(n: number) {}
-
-  remove() {}
+  queue: number[] = []
+  add(n: number) {
+    this.queue.push(n)
+  }
+  remove() {
+    return this.queue.shift()
+  }
 }
 
 export { Queue };

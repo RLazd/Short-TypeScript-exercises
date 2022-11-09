@@ -35,14 +35,32 @@
  */
 
 class Matrix {
-  constructor(private matrix: string) {}
+  _rows: number[][] = []
+  _columns: number[][];
 
+  constructor(private matrix: string) {
+    for (let row of matrix.split('\n')) { //!
+      this._rows.push(row.split(' ').map(Number));
+    }
+
+    const transposed: number[][] = []
+    for (let i = 0; i < this._rows.length; i += 1) {
+      for (let j = 0; j < this._rows[i].length; j += 1) {
+          if (transposed.length <= j) {   
+            transposed[j] = []
+          }
+          transposed[j].push(this._rows[i][j])
+      }
+    }
+     this._columns = transposed;
+    }
+  
   get rows() {
-    return [];
+    return this._rows;
   }
-
-  get columns() {
-    return [];
+      
+   get columns() {
+    return this._columns;
   }
 }
 

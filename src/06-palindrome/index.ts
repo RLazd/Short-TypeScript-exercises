@@ -13,6 +13,8 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str: string) {}
+function palindrome(str: string) {
+    return str.split('').reverse().join('') === str;       //reverse() ir array funkcija, tpc vajag .split
+}
 
 export { palindrome };

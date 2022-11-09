@@ -9,8 +9,28 @@
  *  free: 1
  */
 
-class Words {
-  count(str: string) {}
+ interface IWordCount {
+  [key: string] : number;
 }
+
+class Words {
+  wordCount: IWordCount = {};
+  count(str: string) {
+    this.wordCount = {};      
+    const words: string[] = str.trim().toLowerCase().split(/\s/g);  
+    
+  words.forEach(word => {
+      if(word) {
+        if (this.wordCount.hasOwnProperty(word)) {
+           this.wordCount[word] ++;
+        } else {
+           this.wordCount[word] = 1
+        }
+      } 
+     });
+     return this.wordCount
+  }
+}
+
 
 export { Words };

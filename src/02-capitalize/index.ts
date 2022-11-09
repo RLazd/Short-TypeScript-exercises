@@ -11,6 +11,10 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
-function capitalize(str: string) {}
+import { Words } from "../19-word-count";
 
+function capitalize(str: string) {
+    let arr = str.split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
+    return arr;
+}
 export { capitalize };
